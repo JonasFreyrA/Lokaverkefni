@@ -5,6 +5,8 @@ void main(){
     "banani": 100,
     "mjolk": 149,
     "ostur": 1599,
+    "hakk": 1899,
+
   };
   print(bonus["banani"]);
 
@@ -15,3 +17,4 @@ void main(){
   }
   else{ print("vara finnst ekki");
   }}
+
