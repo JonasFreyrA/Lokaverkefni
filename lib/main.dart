@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'FinnaVoru.dart';
 import 'innkaupaListi.dart';
+import 'FinnaVoru.dart';
 import 'EldriListar.dart';
 
 void main() {
@@ -11,29 +11,54 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: Text("appid"),),
-        body: Center(
-          child: Column(
-            children: <Widget>[
-              TextButton(
-          style: TextButton.styleFrom(
-            primary: Colors.blue,
-            onSurface: Colors.red,
-          ),
-          onPressed: null,
-          child: Text('TextButton'),
-              ),],
-          ),
-        ),
-      ),
-      title: 'Flutter Pages Example',
-      initialRoute: '/',
-      routes: {
-        '/': (context) => Page1(),
-        '/page2': (context) => Page2(),
-        '/page3': (context) => Page3(),
-      },
+      home: HomeScreen(),
     );
   }
 }
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Verð samanburður'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                // Navigate to Page1
+                Navigator.push(context, MaterialPageRoute(builder: (context) => VoruLeit()));
+              },
+              child: Text('Finna vöru'),
+            ),
+            SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                // Navigate to Page2
+                Navigator.push(context, MaterialPageRoute(builder: (context) => InnkaupaListi()));
+              },
+              child: Text('Innkaupa listi'),
+            ),
+            SizedBox(height: 16),
+            TextButton(
+              onPressed: () {
+                // Navigate to Page3
+                Navigator.push(context, MaterialPageRoute(builder: (context) => EldriListar()));
+              },
+              child: Text("Eldri listar"),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+
+
