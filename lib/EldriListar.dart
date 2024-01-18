@@ -6,7 +6,7 @@ class EldriListar extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('Hvað var keypt síðast')),
       body: Center(
-        child: Text('This is Page 3'),
+        child: Text('þetta var keypt síðast'),
       ),
     );
   }

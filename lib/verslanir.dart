@@ -1,4 +1,3 @@
-import 'dart:io';
 
   Map<String, int> bonus = {
     "Hakk": 2899,
@@ -273,4 +272,5 @@ import 'dart:io';
     "kex": 333,
     "snúður": 349
   };
+
 

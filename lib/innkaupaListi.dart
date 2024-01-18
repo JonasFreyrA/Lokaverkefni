@@ -6,7 +6,7 @@ class InnkaupaListi extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('Innkaupa listi')),
       body: Center(
-        child: Text('This is Page 2'),
+        child: Text('Skrá vöru'),
       ),
     );
   }
