@@ -20,46 +20,47 @@ class MyApp extends StatelessWidget {
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Verð samanburður'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                // Navigate to Page1
-                Navigator.push(context, MaterialPageRoute(builder: (context) => VoruLeit()));
-              },
-              child: Text('Finna vöru'),
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          appBar: AppBar(
+            title: Text('Verð samanburður'),
+          ),
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    // Fer á innkaupaListi.dart
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => InnkaupaListi()));
+                  },
+                  child: Text('Finna vöru'),
+                ),
+                SizedBox(height: 16),
+                ElevatedButton(
+                  onPressed: () {
+                    // fer á FinnaVoru.dart
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => MyHomePage()));
+                  },
+                  child: Text('Innkaupa listi'),
+                ),
+                SizedBox(height: 16),
+                TextButton(
+                  onPressed: () {
+                    // fer á eldriListar.dart
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => EldriListar()));
+                  },
+                  child: Text("Eldri listar"),
+                ),
+              ],
             ),
-            SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () {
-                // Navigate to Page2
-                Navigator.push(context, MaterialPageRoute(builder: (context) => InnkaupaListi()));
-              },
-              child: Text('Innkaupa listi'),
-            ),
-            SizedBox(height: 16),
-            TextButton(
-              onPressed: () {
-                // Navigate to Page3
-                Navigator.push(context, MaterialPageRoute(builder: (context) => EldriListar()));
-              },
-              child: Text("Eldri listar"),
-            ),
-          ],
-        ),
-      ),
-    );
+          ),
+        ));
   }
 }
-
-
-
-
-
-
